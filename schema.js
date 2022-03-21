@@ -5,9 +5,9 @@ const {
     GraphQLList,
     GraphQLInt,
     GraphQLNonNull
-} = require('graphql')
+} = require('graphql');
 
-const axios = require('axios')
+const axios = require('axios');
 
 //Dummy data
 /*
@@ -47,7 +47,7 @@ const RootQuery = new GraphQLObjectType({
                 }
                 */
                 return axios.get(`http://localhost:3000/customers/${args.id}`)
-                    .then((response) => response.data)
+                    .then(response => response.data)
             }
         },
         customers: {
@@ -107,6 +107,5 @@ const mutation = new GraphQLObjectType({
 })
 
 module.exports = new GraphQLSchema({
-    query: RootQuery,
-    mutation
+    query: RootQuery
 });
